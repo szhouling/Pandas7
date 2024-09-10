@@ -1,0 +1,11 @@
+import pandas as pd
+
+def count_salary_categories(accounts: pd.DataFrame) -> pd.DataFrame:
+    low = accounts[accounts['income'] < 20000]
+    ave = accounts[(accounts['income'] >= 20000) & (accounts['income'] <= 50000)]
+    high = accounts[accounts['income'] > 50000]
+    return pd.DataFrame([['Low Salary', len(low)], ['Average Salary', len(ave)], ['High Salary', len(high)
+    ]], columns = ['category', 'accounts_count'])
+        
+
+    
